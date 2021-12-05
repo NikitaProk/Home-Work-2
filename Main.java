@@ -10,23 +10,45 @@ public class Main {
         Ostrich ostrich = new Ostrich("Runner", "25.12.2007");
         Carp carp = new Carp("Wet dude", "03.10.2021");
         Searoach searoach = new Searoach("Chika", "30.11.2021");
-        Animals animals = new Animals("", "");
 
-        List<Animals> zoo = new ArrayList<>();
-        zoo.add(lynx);
-        zoo.add(raccoon);
-        zoo.add(kangaroo);
-        zoo.add(eagle);
-        zoo.add(ostrich);
-        zoo.add(carp);
-        zoo.add(searoach);
-        for (Animals n : zoo) {
-            System.out.println();
-            System.out.println("Name of animal: " + n.getNameOfAnimal()
-                    + "; Date of Birth: " + n.getDateOfBirth()
-                    + "; Kind of food meet: " + n.eat("meet")
-                    + "; Kind of food plants: " + n.eat("plants"));
-        }
-        System.out.println("\nNeeded area for all animals: " + animals.sizeOfZoo() + " km" + "\u00B2");
+
+        List<Animal> animals = new ArrayList<>();
+        animals.add(lynx);
+        animals.add(raccoon);
+        animals.add(kangaroo);
+        animals.add(eagle);
+        animals.add(ostrich);
+        animals.add(carp);
+        animals.add(searoach);
+
+        Zoo zoo = new Zoo();
+        zoo.addAnimal(lynx, 5);
+        zoo.addAnimal(raccoon, 4);
+        zoo.addAnimal(kangaroo, 2);
+        zoo.addAnimal(eagle, 7);
+        zoo.addAnimal(ostrich, 3);
+        zoo.addAnimal(carp, 15);
+        zoo.addAnimal(searoach, 7);
+
+
+        printAnimals(zoo);
+
+        System.out.println("\nNeeded area for all animals: " + zoo.sizeOfZoo() + " km" + "\u00B2");
+        System.out.println("\nNeede car with lifting capacity for land animals: " + zoo.getLiftingCapacityForLandResidenceAnimals() + " kg");
+        System.out.println("\nNeede car with lifting capacity for flying animals: " + zoo.getLiftingCapacityForFlyingResidenceAnimals() + " kg");
+        System.out.println("\nNeede car with lifting capacity for waterfowl animals: " + zoo.getLiftingCapacityForWaterfowlResidenceAnimals() + " kg");
+    }
+
+    private static void printAnimals(Zoo zoo) {
+        zoo.getAnimals().stream()
+                .map(ZooAnimal::getAnimal)
+                .forEach(animal -> {
+                    System.out.println();
+                    System.out.println("Name of animal: " + animal.getNameOfAnimal()
+                            + "; Date of Birth: " + animal.getDateOfBirth()
+                            + "; Kind of food meet: " + animal.eat("meet")
+                            + "; Kind of food plants: " + animal.eat("plants"));
+                });
+
     }
 }
