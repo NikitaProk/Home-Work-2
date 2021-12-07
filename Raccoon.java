@@ -1,12 +1,12 @@
-public class Raccoon extends Animal {
+public class Raccoon extends Carnivore {
 
-    static final String habitat = "land";
-    static final String food = "meet";
-    static final int maxWeight = 9;
-    static final int sizeOfArea = 50;
+    static final HabitatType HABITAT = HabitatType.LAND;
+    static final String FOOD = "meet";
+    static final int MAX_WEIGHT = 9;
+    static final int SIZE_OF_AREA = 50;
 
 
     public Raccoon(String name, String age) {
-        super(name, age,sizeOfArea,maxWeight,habitat);
+        super(name, age, SIZE_OF_AREA, MAX_WEIGHT, HABITAT);
     }
 }

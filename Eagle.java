@@ -1,10 +1,10 @@
-public class Eagle extends Animal {
-    static final String habitat = "flying";
-    static final String food = "meet";
-    static final int maxWeight = 7;
-    static final int sizeOfArea = 100;
+public class Eagle extends Carnivore {
+    static final HabitatType HABITAT = HabitatType.FLYING;
+    static final String FOOD = "meet";
+    static final int MAX_WEIGHT = 7;
+    static final int SIZE_OF_AREA = 100;
 
     public Eagle(String name, String age) {
-        super(name, age, sizeOfArea, maxWeight, habitat);
+        super(name, age, SIZE_OF_AREA, MAX_WEIGHT, HABITAT);
     }
 }

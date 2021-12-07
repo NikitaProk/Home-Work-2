@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,16 +8,6 @@ public class Main {
         Ostrich ostrich = new Ostrich("Runner", "25.12.2007");
         Carp carp = new Carp("Wet dude", "03.10.2021");
         Searoach searoach = new Searoach("Chika", "30.11.2021");
-
-
-        List<Animal> animals = new ArrayList<>();
-        animals.add(lynx);
-        animals.add(raccoon);
-        animals.add(kangaroo);
-        animals.add(eagle);
-        animals.add(ostrich);
-        animals.add(carp);
-        animals.add(searoach);
 
         Zoo zoo = new Zoo();
         zoo.addAnimal(lynx, 5);

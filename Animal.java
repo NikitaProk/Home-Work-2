@@ -1,44 +1,39 @@
 public abstract class Animal {
-    private final String nameOfAnimal;
-    private final String dateOfBirth;
-    private final int sizeOfArea;
-    private final int maxWeight;
-    private final String habitat;
+    private final String NAME_OF_ANIMAL;
+    private final String DATE_OF_BIRTH;
+    private final int SIZE_OF_AREA;
+    private final int MAX_WEIGHT;
+    private final HabitatType HABITAT;
 
     public String getNameOfAnimal() {
-        return nameOfAnimal;
+        return NAME_OF_ANIMAL;
     }
 
     public String getDateOfBirth() {
-        return dateOfBirth;
+        return DATE_OF_BIRTH;
     }
 
     public int getSizeOfArea() {
-        return sizeOfArea;
+        return SIZE_OF_AREA;
     }
 
     public int getMaxWeight() {
-        return maxWeight;
+        return MAX_WEIGHT;
     }
 
-    public String getHabitat() {
-        return habitat;
+    public HabitatType getHabitat() {
+        return HABITAT;
     }
 
 
-    public Animal(String name, String dateOfBirth, int sizeOfArea, int maxWeight, String habitat) {
-        this.nameOfAnimal = name;
-        this.dateOfBirth = dateOfBirth;
-        this.sizeOfArea = sizeOfArea;
-        this.maxWeight = maxWeight;
-        this.habitat = habitat;
+    public Animal(String name, String dateOfBirth, int sizeOfArea, int maxWeight, HabitatType habitat) {
+        this.NAME_OF_ANIMAL = name;
+        this.DATE_OF_BIRTH = dateOfBirth;
+        this.SIZE_OF_AREA = sizeOfArea;
+        this.MAX_WEIGHT = maxWeight;
+        this.HABITAT = habitat;
     }
 
-    public String eat(String food) {
-        if ("meet".equals(food)) {
-            return "I will eat!";
-        } else {
-            return "I will not eat!";
-        }
-    }
+    public abstract String eat(String food);
+
 }
